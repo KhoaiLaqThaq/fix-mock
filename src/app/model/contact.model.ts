@@ -6,5 +6,11 @@ export class ContactModel {
   except: string;
   dateTo: string;
   manager: string
+  building: any;
+  managerInfo: any;
+  apartment: any;
+  cycleChecking: any;
+  countCycle: number;
+  cycleChild: any;
 
 }

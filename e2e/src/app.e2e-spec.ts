@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Fix-Mock app is running!');
+    expect(page.getTitleText()).toEqual('Tik-Mock app is running!');
   });
 
   afterEach(async () => {

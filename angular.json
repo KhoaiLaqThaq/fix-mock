@@ -3,13 +3,9 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Fix-Mock": {
+    "Tik-Mock": {
       "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss"
-        }
-      },
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -17,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Fix-Mock",
+            "outputPath": "dist/Tik-Mock",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -28,9 +24,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "node_modules/@clr/icons/clr-icons.min.css",
+              "node_modules/@clr/ui/clr-ui.min.css",
+              "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@webcomponents/custom-elements/custom-elements.min.js",
+              "node_modules/@clr/icons/clr-icons.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -67,18 +68,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Fix-Mock:build"
+            "browserTarget": "Tik-Mock:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Fix-Mock:build:production"
+              "browserTarget": "Tik-Mock:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Fix-Mock:build"
+            "browserTarget": "Tik-Mock:build"
           }
         },
         "test": {
@@ -93,7 +94,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           }
@@ -115,15 +116,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Fix-Mock:serve"
+            "devServerTarget": "Tik-Mock:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Fix-Mock:serve:production"
+              "devServerTarget": "Tik-Mock:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "Fix-Mock"
+    }
+  },
+  "defaultProject": "Tik-Mock"
 }

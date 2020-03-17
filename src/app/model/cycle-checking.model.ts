@@ -7,5 +7,6 @@ export class CycleCheckingModel {
   companyExe: string;
   money: number;
   buildingNo: number;
+  total: number;
 
 }

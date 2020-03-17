@@ -1,0 +1,98 @@
+<app-toggle-switches (isOpenSwitch)="switchFormEvent($event)"></app-toggle-switches>
+
+<table border="1" class="max-w">
+  <thead>
+    <tr>
+      <th rowspan="3">Chọn</th>
+      <th [@OpenClose]="switch.constractSw" colspan="4">Thông tin hợp đồng</th>
+      <th [@OpenClose]="switch.buildingSw" colspan="2">Thông tin tòa nhà</th>
+      <th [@OpenClose]="switch.managerSw">Thông tin chủ <br/> sở hữu</th>
+      <th [@OpenClose]="switch.apartmentSw" colspan="3">Số căn hộ</th>
+      <th [@OpenClose]="switch.cycleCheckingSw" colspan="7">Kiểm tra định kì</th>
+      <th [@OpenClose]="switch.otherSw" rowspan="3">Thông tin khác</th>
+    </tr>
+    <tr>
+      <th [@OpenClose]="switch.constractSw">No.</th>
+      <th [@OpenClose]="switch.constractSw">Phân loại</th>
+      <th [@OpenClose]="switch.constractSw">Hình thức</th>
+      <th [@OpenClose]="switch.constractSw">Ngoài tiêu chuẩn</th>
+      <th [@OpenClose]="switch.buildingSw">No.</th>
+      <th [@OpenClose]="switch.buildingSw">Tên</th>
+      <th [@OpenClose]="switch.managerSw">Tên</th>
+      <th [@OpenClose]="switch.apartmentSw" rowspan="2">Phần cho <br/> thuê</th>
+      <th [@OpenClose]="switch.apartmentSw" rowspan="2">Phần chủ <br/> nhà sử dụng</th>
+      <th [@OpenClose]="switch.apartmentSw" rowspan="2">Tổng số</th>
+      <th [@OpenClose]="switch.cycleCheckingSw" rowspan="2">Tên hạng mục</th>
+      <th [@OpenClose]="switch.cycleCheckingSw" rowspan="2">Chu kỳ</th>
+      <th [@OpenClose]="switch.cycleCheckingSw" rowspan="2">Đơn vị</th>
+      <th [@OpenClose]="switch.cycleCheckingSw" rowspan="2">Số lần</th>
+      <th [@OpenClose]="switch.cycleCheckingSw" rowspan="2">Công ty thực hiện</th>
+      <th [@OpenClose]="switch.cycleCheckingSw" rowspan="2">Số tiền phát sinh</th>
+      <th [@OpenClose]="switch.cycleCheckingSw" rowspan="2">Tổng số tiền</th>
+    </tr>
+    <tr>
+      <th [@OpenClose]="switch.constractSw">Ngày hợp đồng</th>
+      <th [@OpenClose]="switch.constractSw" colspan="3">Phụ trách</th>
+      <th [@OpenClose]="switch.buildingSw">Ngày chuyển giao</th>
+      <th [@OpenClose]="switch.buildingSw">Địa chỉ</th>
+      <th [@OpenClose]="switch.managerSw">Chào hỏi</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="loading">
+    <tr class="clr-text-align-center">
+      <td colspan="18">
+          <span class="spinner spinner-md">
+              Loading...
+          </span>
+      </td>
+    </tr>
+  </tbody>
+
+  <tbody *ngFor="let contract of contracts">
+    <tr *ngIf="contract.countCycle != null">
+      <td [attr.rowspan]="contract.countCycle" class="clr-text-align-center">
+        <button class="btn btn-primary" type="button">Chọn <span *ngIf="!contract.dateTo.length > 0" class="notyet">未</span></button>
+      </td>
+      <td [@OpenClose]="switch.constractSw" class="clr-align-text-top clr-text-align-center">{{ contract.no }}</td>
+      <td [@OpenClose]="switch.constractSw" class="clr-align-text-top clr-text-align-center">{{ contract.type }}</td>
+      <td [@OpenClose]="switch.constractSw" class="clr-align-text-top clr-text-align-center">{{ contract.pattern }}</td>
+      <td [@OpenClose]="switch.constractSw" class="clr-align-text-top clr-text-align-center">{{ contract.except }}</td>
+      <td [@OpenClose]="switch.buildingSw" class="clr-text-align-center">{{ contract.building[0].no }}</td>
+      <td [@OpenClose]="switch.buildingSw" class="clr-text-align-center">{{ contract.building[0].name }}</td>
+      <td [@OpenClose]="switch.managerSw" class="clr-align-text-top clr-text-align-center">{{ contract.managerInfo[0].name }}</td>
+      <td [@OpenClose]="switch.apartmentSw" class="clr-align-text-top clr-text-align-right" [attr.rowspan]="contract.countCycle">{{ contract.apartment[0].lease }}</td>
+      <td [@OpenClose]="switch.apartmentSw" class="clr-align-text-top clr-text-align-right" [attr.rowspan]="contract.countCycle">{{ contract.apartment[0].using }}</td>
+      <td [@OpenClose]="switch.apartmentSw" class="clr-align-text-top clr-text-align-right" [attr.rowspan]="contract.countCycle">{{ contract.apartment[0].total }}</td>
+      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[0].name }}</td>
+      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[0].cycle }}</td>
+      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[0].unit }}</td>
+      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[0].times }}</td>
+      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[0].companyExe }}</td>
+      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-right">{{ contract.cycleChecking[0].money | currency:'JPY':'' }}</td>
+      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-right" [attr.rowspan]="contract.countCycle">{{ contract.cycleChecking[0].total | currency:'JPY':''}}</td>
+      <td [@OpenClose]="switch.otherSw" class="clr-align-text-top clr-text-align-center" [attr.rowspan]="contract.countCycle">Đây là <br/> thông tin khác</td>
+    </tr>
+    <tr>
+      <td [@OpenClose]="switch.constractSw" class="clr-align-text-top clr-text-align-center" [attr.rowspan]="contract.countCycle-1">{{ contract.dateTo | date: 'yyyy/M/d'}}</td>
+      <td [@OpenClose]="switch.constractSw" class="clr-align-text-top" [attr.rowspan]="contract.countCycle-1" colspan="3">{{ contract.manager }}</td>
+      <td [@OpenClose]="switch.buildingSw" class="clr-align-text-top clr-text-align-center" [attr.rowspan]="contract.countCycle-1">{{ contract.building[0].dateFrom }}</td>
+      <td [@OpenClose]="switch.buildingSw" class="clr-align-text-top clr-text-align-center" [attr.rowspan]="contract.countCycle-1">{{ contract.building[0].address }}</td>
+      <td [@OpenClose]="switch.managerSw" class="clr-align-text-top clr-text-align-center" [attr.rowspan]="contract.countCycle-1">{{ contract.managerInfo[0].call }}</td>
+      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[1].name }}</td>
+      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[1].cycle }}</td>
+      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[1].unit }}</td>
+      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[1].times }}</td>
+      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[1].companyExe }}</td>
+      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-right">{{ contract.cycleChecking[1].money | currency:'JPY':'' }}</td>
+    </tr>
+    <tr *ngFor="let cycleChecking of contract.cycleChild" [@OpenClose]="switch.cycleCheckingSw">
+      <td class="clr-align-text-top clr-text-align-center">{{ cycleChecking.name }}</td>
+      <td class="clr-align-text-top clr-text-align-center">{{ cycleChecking.cycle }}</td>
+      <td class="clr-align-text-top clr-text-align-center">{{ cycleChecking.unit }}</td>
+      <td class="clr-align-text-top clr-text-align-center">{{ cycleChecking.times }}</td>
+      <td class="clr-align-text-top clr-text-align-center">{{ cycleChecking.companyExe }}</td>
+      <td class="clr-align-text-top clr-text-align-right">{{ cycleChecking.money | currency:'JPY':'' }}</td>
+    </tr>
+
+  </tbody>
+</table>

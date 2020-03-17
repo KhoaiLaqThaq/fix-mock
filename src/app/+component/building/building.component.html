@@ -1,0 +1,4 @@
+<div>
+  <app-building-search (searching)="showDataTable($event)"></app-building-search>
+  <app-building-data-table *ngIf="searching"></app-building-data-table>
+</div>
