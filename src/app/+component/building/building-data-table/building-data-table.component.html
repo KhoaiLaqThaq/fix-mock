@@ -51,7 +51,7 @@
   <tbody *ngFor="let contract of contracts">
     <tr *ngIf="contract.countCycle != null">
       <td [attr.rowspan]="contract.countCycle" class="clr-text-align-center">
-        <button class="btn btn-primary" type="button">Chọn <span *ngIf="!contract.dateTo.length > 0" class="notyet">未</span></button>
+        <a class="btn btn-primary" href="/building/building-detail/{{contract.no}}">Chọn <span *ngIf="!contract.dateTo.length > 0" class="notyet">未</span></a>
       </td>
       <td [@OpenClose]="switch.constractSw" class="clr-align-text-top clr-text-align-center">{{ contract.no }}</td>
       <td [@OpenClose]="switch.constractSw" class="clr-align-text-top clr-text-align-center">{{ contract.type }}</td>
@@ -65,7 +65,7 @@
       <td [@OpenClose]="switch.apartmentSw" class="clr-align-text-top clr-text-align-right" [attr.rowspan]="contract.countCycle">{{ contract.apartment[0].total }}</td>
       <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[0].name }}</td>
       <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[0].cycle }}</td>
-      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[0].unit }}</td>
+      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center"  [attr.rowspan]="contract.countCycle">{{ contract.cycleChecking[0].unit }}</td>
       <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[0].times }}</td>
       <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[0].companyExe }}</td>
       <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-right">{{ contract.cycleChecking[0].money | currency:'JPY':'' }}</td>
@@ -80,7 +80,6 @@
       <td [@OpenClose]="switch.managerSw" class="clr-align-text-top clr-text-align-center" [attr.rowspan]="contract.countCycle-1">{{ contract.managerInfo[0].call }}</td>
       <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[1].name }}</td>
       <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[1].cycle }}</td>
-      <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[1].unit }}</td>
       <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[1].times }}</td>
       <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-center">{{ contract.cycleChecking[1].companyExe }}</td>
       <td [@OpenClose]="switch.cycleCheckingSw" class="clr-align-text-top clr-text-align-right">{{ contract.cycleChecking[1].money | currency:'JPY':'' }}</td>
@@ -88,7 +87,6 @@
     <tr *ngFor="let cycleChecking of contract.cycleChild" [@OpenClose]="switch.cycleCheckingSw">
       <td class="clr-align-text-top clr-text-align-center">{{ cycleChecking.name }}</td>
       <td class="clr-align-text-top clr-text-align-center">{{ cycleChecking.cycle }}</td>
-      <td class="clr-align-text-top clr-text-align-center">{{ cycleChecking.unit }}</td>
       <td class="clr-align-text-top clr-text-align-center">{{ cycleChecking.times }}</td>
       <td class="clr-align-text-top clr-text-align-center">{{ cycleChecking.companyExe }}</td>
       <td class="clr-align-text-top clr-text-align-right">{{ cycleChecking.money | currency:'JPY':'' }}</td>

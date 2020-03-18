@@ -16,21 +16,11 @@ export class ManagerInfoService {
 
   findAll(): Observable< ManagerInfoModel[] > {
     const url = `${ environment.JSON_SERVER }/managerInfo`;
-    return this.http.get<ManagerInfoModel[]>(url)
-      .pipe(
-        delay(300),
-        tap((managerInfoModel: ManagerInfoModel[]) => console.log(`get All manager-info: ${JSON.stringify(managerInfoModel)}`)),
-        catchError(err => of([]))
-      );
+    return this.http.get<ManagerInfoModel[]>(url).pipe(delay(300));
   }
 
   findById( id: number ): Observable< ManagerInfoModel > {
-    const url = `${ environment.JSON_SERVER }/managerInfo/${id}`;
-    return this.http.get<ManagerInfoModel>(url)
-      .pipe(
-        tap( managerInfoModel => console.log(`get manager-info by id ${JSON.stringify(managerInfoModel)}`)),
-        catchError( err =>  of(new ManagerInfoModel()))
-      );
+    return this.http.get<ManagerInfoModel>(`${ environment.JSON_SERVER }/managerInfo/${id}`);
   }
 
   findByBuildingNo( buildingNo: number ): Observable<ManagerInfoModel[]> {

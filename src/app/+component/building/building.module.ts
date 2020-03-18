@@ -10,6 +10,8 @@ import { ToggleSwitchesComponent } from './toggle-switches/toggle-switches.compo
 import { BuildingDataTableComponent } from './building-data-table/building-data-table.component';
 import { HttpClientModule } from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { BuildingHeaderComponent } from './building-header/building-header.component';
+import { BuildingFormComponent } from './building-form/building-form.component';
 
 
 @NgModule({
@@ -19,6 +21,8 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
     BuildingDetailComponent,
     ToggleSwitchesComponent,
     BuildingDataTableComponent,
+    BuildingHeaderComponent,
+    BuildingFormComponent,
   ],
   imports: [
     CommonModule,

@@ -26,10 +26,11 @@ import { SwitchModel } from "../../../model/switch/switch.model";
 export class BuildingDataTableComponent implements OnInit, OnDestroy {
 
   contracts: ContactModel[] = [];
+  switch = new SwitchModel();
   subscription: Subscription;
   switchForm: any;
   loading: boolean = false;
-  switch = new SwitchModel();
+
 
   constructor(
     private contactService: ContactService,
@@ -84,7 +85,7 @@ export class BuildingDataTableComponent implements OnInit, OnDestroy {
                 contract.cycleChecking = resCycleChecking;
                 contract.cycleChecking[0].total = 0;
                 contract.cycleChecking.forEach(cycleChecking => {
-                  contract.cycleChecking[0].total += cycleChecking.times * cycleChecking.money;
+                  contract.cycleChecking[0].total += cycleChecking.money;
                 })
                 contract.countCycle = resCycleChecking.length;
                 contract.cycleChild = resCycleChecking;

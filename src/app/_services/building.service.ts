@@ -16,21 +16,11 @@ export class BuildingService {
 
   findAll(): Observable< BuildingModel[] > {
     const url = `${ environment.JSON_SERVER }/building`;
-    return this.http.get<BuildingModel[]>(url)
-      .pipe(
-        delay(300),
-        tap((buildingModel: BuildingModel[]) => console.log(`get All building: ${JSON.stringify(buildingModel)}`)),
-        catchError(err => of([]))
-      );
+    return this.http.get<BuildingModel[]>(url).pipe(delay(300));
   }
 
   findById( id: number ): Observable< BuildingModel > {
-    const url = `${ environment.JSON_SERVER }/building/${id}`;
-    return this.http.get<BuildingModel>(url)
-      .pipe(
-        tap( buildingModel => console.log(`get building by id ${JSON.stringify(buildingModel)}`)),
-        catchError( err =>  of(new BuildingModel()))
-      );
+    return this.http.get<BuildingModel>(`${ environment.JSON_SERVER }/building/${id}`);
   }
 
   findByContactNo( contactNo: number ): Observable< BuildingModel[] > {

@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { BuildingComponent } from './building.component';
 import {BuildingSearchComponent} from "./building-search/building-search.component";
+import {BuildingHeaderComponent} from "./building-header/building-header.component";
+import {BuildingDetailComponent} from "./building-detail/building-detail.component";
 
 const routes: Routes = [
   { path: '', component: BuildingComponent, children: [
@@ -10,6 +12,10 @@ const routes: Routes = [
         path: 'building-search',
         component: BuildingSearchComponent
       },
+      {
+        path: 'building-detail/:no',
+        component: BuildingDetailComponent
+      }
     ]
   }
   ];

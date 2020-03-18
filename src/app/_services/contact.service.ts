@@ -21,23 +21,12 @@ export class ContactService {
   ) { }
 
   findAll(): Observable< ContactModel[] > {
-    // debugger
-    const url = `${ environment.JSON_SERVER }/contract`;
-    return this.http.get<ContactModel[]>(url)
-      .pipe(
-        delay(500),
-        tap((contactModel: ContactModel[]) => console.log(`get All contract: ${JSON.stringify(contactModel)}`)),
-        catchError(err => of([]))
-      );
+    return this.http.get<ContactModel[]>(`${ environment.JSON_SERVER }/contract`).pipe(delay(500));
   }
 
-  findById( id: number ): Observable< ContactModel > {
-    const url = `${ environment.JSON_SERVER }/contract/${id}`;
-    return this.http.get<ContactModel>(url)
-      .pipe(
-        tap( contactModel => console.log(`get contact by id ${JSON.stringify(contactModel)}`)),
-        catchError( err =>  of(new ContactModel()))
-      );
+  findByContractNo( contractNo: number ): Observable< ContactModel[] > {
+    debugger;
+    return this.http.get<ContactModel[]>(`${ environment.JSON_SERVER }/contract?no=${contractNo}`);
   }
 
 }

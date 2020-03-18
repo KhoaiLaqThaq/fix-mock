@@ -11,47 +11,23 @@
 <nav class="subnav">
   <ul class="nav">
     <li class="nav-item">
-      <a id="subm1" [ngClass]="{ 'nav-link': true, 'active': 'building' == navLv1 }" href="/building">
+      <a [ngClass]="{ 'nav-link': true, 'active': 'building' == navLv1 }" href="/building">
         建物管理</a>
     </li>
     <li class="nav-item">
-      <a id="subm2" [ngClass]="{ 'nav-link': true, 'active': 'construction-top' == navLv1 }"
+      <a [ngClass]="{ 'nav-link': true, 'active': 'construction-top' == navLv1 }"
          href="/constraction">工事</a>
     </li>
     <li class="nav-item">
-      <a id="subm3" [ngClass]="{ 'nav-link': true, 'active': 'patrol-top' == navLv1 }" href="/patrol-top">定期巡回</a>
+      <a [ngClass]="{ 'nav-link': true, 'active': 'patrol-top' == navLv1 }" href="/patrol-top">定期巡回</a>
     </li>
     <li class="nav-item">
-      <a id="subm4" [ngClass]="{ 'nav-link': true, 'active': 'inspection-top' == navLv1 }"
+      <a [ngClass]="{ 'nav-link': true, 'active': 'inspection-top' == navLv1 }"
          href="/inspection-top">法定点検</a>
     </li>
     <li class="nav-item">
-      <a id="subm5" [ngClass]="{ 'nav-link': true, 'active': 'maintenance-top' == navLv1 }"
+      <a [ngClass]="{ 'nav-link': true, 'active': 'maintenance-top' == navLv1 }"
          href="/maintenance-top">マスタメンテナンス</a>
-    </li>
-  </ul>
-</nav>
-<nav id="subn1" class="subnav" *ngIf="'building-top' == navLv1">
-  <ul class="nav">
-    <li class="nav-item">
-      <a id="subm1-1" [ngClass]="{ 'nav-link': true, 'active': 'building-search' == navLv2 }"
-         href="/building-search">物件検索</a>
-    </li>
-    <li class="nav-item">
-      <a id="subm1-2" [ngClass]="{ 'nav-link': true, 'active': 'building-detail' == navLv2 }"
-         href="/building-detail">物件詳細</a>
-    </li>
-  </ul>
-</nav>
-<nav id="subn1" class="subnav" *ngIf="'patrol-top' == navLv1">
-  <ul class="nav">
-    <li class="nav-item">
-      <a id="subm1-1" [ngClass]="{ 'nav-link': true, 'active': 'patrol-irai' == navLv2 }"
-         href="/#">巡回依頼</a>
-    </li>
-    <li class="nav-item">
-      <a id="subm1-2" [ngClass]="{ 'nav-link': true, 'active': 'patrol-plan' == navLv2 }"
-         href="/#">巡回計画</a>
     </li>
   </ul>
 </nav>

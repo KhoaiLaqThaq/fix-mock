@@ -7,16 +7,15 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class BuildingSearchComponent implements OnInit {
 
-  @Output() searching = new EventEmitter<any>();
+  searching: boolean = false;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onSubmit() {
-    this.searching.emit(true);
-    console.log(this.searching);
+  showDataTable( event ) {
+    this.searching = event;
   }
 
 }

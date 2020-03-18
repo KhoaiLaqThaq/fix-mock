@@ -16,21 +16,11 @@ export class CycleCheckingService {
 
   findAll(): Observable< CycleCheckingModel[] > {
     const url = `${ environment.JSON_SERVER }/cycleChecking`;
-    return this.http.get<CycleCheckingModel[]>(url)
-      .pipe(
-        delay(300),
-        tap((cycleCheckingModel: CycleCheckingModel[]) => console.log(`get All cycle checking: ${JSON.stringify(cycleCheckingModel)}`)),
-        catchError(err => of([]))
-      );
+    return this.http.get<CycleCheckingModel[]>(url).pipe(delay(300));
   }
 
   findById( id: number ): Observable< CycleCheckingModel > {
-    const url = `${ environment.JSON_SERVER }/cycleChecking/${id}`;
-    return this.http.get<CycleCheckingModel>(url)
-      .pipe(
-        tap( cycleCheckingModel => console.log(`get cycle-checking by id ${JSON.stringify(cycleCheckingModel)}`)),
-        catchError( err =>  of(new CycleCheckingModel()))
-      );
+    return this.http.get<CycleCheckingModel>(`${ environment.JSON_SERVER }/cycleChecking/${id}`);
   }
 
   findByBuildingNo( buildingNo: number ): Observable<CycleCheckingModel[]> {
