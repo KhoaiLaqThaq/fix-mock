@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {ContactService} from "../../../_services/contact.service";
-import {ContactModel} from "../../../model/contact.model";
+import {ContractService} from "../../../_services/building/contract.service";
+import {ContractModel} from "../../../model/building/contract.model";
 
 @Component({
   selector: 'app-building-detail',
@@ -10,11 +10,11 @@ import {ContactModel} from "../../../model/contact.model";
 })
 export class BuildingDetailComponent implements OnInit {
 
-  contact: ContactModel;
+  contact: ContractModel;
 
   constructor(
     private route: ActivatedRoute,
-    private contactService: ContactService
+    private contactService: ContractService
   ) { }
 
   ngOnInit() {

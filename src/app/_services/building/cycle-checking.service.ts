@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable, of} from "rxjs";
-import {environment} from "../../environments/environment";
+import {environment} from "../../../environments/environment";
 import {catchError, delay, tap} from "rxjs/operators";
-import {CycleCheckingModel} from "../model/cycle-checking.model";
+import {CycleCheckingModel} from "../../model/building/cycle-checking.model";
 
 @Injectable({
   providedIn: 'root'

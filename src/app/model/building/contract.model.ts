@@ -1,4 +1,4 @@
-export class ContactModel {
+export class ContractModel {
 
   no: number;
   type: string;

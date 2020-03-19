@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable, of} from "rxjs";
-import {environment} from "../../environments/environment";
+import {environment} from "../../../environments/environment";
 import {catchError, delay, tap} from "rxjs/operators";
-import {BuildingModel} from "../model/building.model";
+import {BuildingModel} from "../../model/building/building.model";
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +23,8 @@ export class BuildingService {
     return this.http.get<BuildingModel>(`${ environment.JSON_SERVER }/building/${id}`);
   }
 
-  findByContactNo( contactNo: number ): Observable< BuildingModel[] > {
-    return this.http.get<BuildingModel[]>(`${ environment.JSON_SERVER }/building?contactNo=${contactNo}`);
+  findByContactNo( contractNo: number ): Observable< BuildingModel[] > {
+    return this.http.get<BuildingModel[]>(`${ environment.JSON_SERVER }/building?contractNo=${contractNo}`);
   }
 
 }

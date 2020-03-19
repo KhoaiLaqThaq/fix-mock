@@ -1,0 +1,146 @@
+{
+  "contract": [
+    {
+      "no": 1011867200,
+      "type": "Định kì",
+      "pattern": "H",
+      "except": "x",
+      "dateTo": "2020/11/01",
+      "manager": "Chi nhánh OO"
+    },
+    {
+      "no": 1012867200,
+      "type": "Quý",
+      "pattern": "H",
+      "except": "x",
+      "dateTo": "",
+      "manager": "Chi nhánh OO"
+    }
+  ],
+  "building": [
+    {
+      "no": 131010000,
+      "name": "Tòa nhà A",
+      "dateFrom": "2019/01/10",
+      "address": "Hoàng Quốc Việt",
+      "contactNo": 1011867200
+    },
+    {
+      "no": 121010000,
+      "name": "LandMark 100",
+      "dateFrom": "2019/01/10",
+      "address": "HANOI",
+      "contactNo": 1012867200
+    }
+  ],
+  "managerInfo": [
+    {
+      "name": "00 xx",
+      "call": "Đã gọi",
+      "buildingNo": 131010000
+    },
+    {
+      "name": "Hang xx",
+      "call": "Đã gọi",
+      "buildingNo": 121010000
+    }
+  ],
+  "apartment": [
+    {
+      "lease": 5,
+      "using": 1,
+      "total": 6,
+      "buildingNo": 131010000
+    },
+    {
+      "lease": 400,
+      "using": 10,
+      "total": 410,
+      "buildingNo": 121010000
+    }
+  ],
+  "cycleChecking": [
+    {
+      "name": "quet don tieu chuan",
+      "cycle": 1,
+      "unit": "tháng",
+      "times": 1,
+      "companyExe": "Cong ty A",
+      "money": 1000,
+      "buildingNo": 131010000
+    },
+    {
+      "name": "quet don co ban",
+      "cycle": 1,
+      "unit": "tháng",
+      "times": 2,
+      "companyExe": "Cong ty A",
+      "money": 1000,
+      "buildingNo": 131010000
+    },
+    {
+      "name": "Thuc hien kiem tra",
+      "cycle": 1,
+      "unit": "tháng",
+      "times": 3,
+      "companyExe": "Cong ty A",
+      "money": 1000,
+      "buildingNo": 131010000
+    },
+    {
+      "name": "Kiem tra phong chay chua chay",
+      "cycle": 6,
+      "unit": "tháng",
+      "times": 1,
+      "companyExe": "Cong ty B",
+      "money": 1000,
+      "buildingNo": 131010000
+    },
+    {
+      "name": "Kiem tra EV",
+      "cycle": 3,
+      "unit": "tháng",
+      "times": 1,
+      "companyExe": "Cong ty C",
+      "money": 10000,
+      "buildingNo": 131010000
+    },
+    {
+      "name": "Kiem tra EV",
+      "cycle": 2,
+      "unit": "tháng",
+      "times": 1,
+      "companyExe": "Cong ty C",
+      "money": 10000,
+      "buildingNo": 121010000
+    },
+    {
+      "name": "Kiem tra AT PCCC",
+      "cycle": 4,
+      "unit": "tháng",
+      "times": 1,
+      "companyExe": "Cong ty C",
+      "money": 10000,
+      "buildingNo": 121010000
+    },
+    {
+      "name": "Kiem tra Thang may",
+      "cycle": 5,
+      "unit": "tháng",
+      "times": 1,
+      "companyExe": "Cong ty C",
+      "money": 10000,
+      "buildingNo": 121010000
+    },
+    {
+      "name": "Camera security",
+      "cycle": 4,
+      "unit": "tháng",
+      "times": 1,
+      "companyExe": "Cong ty C",
+      "money": 10000,
+      "buildingNo": 121010000
+    }
+
+  ]
+}

@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {ClarityModule} from "@clr/angular";
-import {FormsModule} from "@angular/forms";
 import {RouterModule} from "@angular/router";
 import {BuildingModule} from "./+component/building/building.module";
 import { HeaderComponent } from './+component/common/header/header.component';

@@ -1,13 +1,103 @@
-/* You can add global styles to this file, and also import other style files */
-
-.clr-text-align-center {
-  text-align: center;
+/* ボタン内に文字と同時にアイコンを表示した際、文字に近すぎるので少し間隔を開ける */
+clr-icon.with-string {
+  margin-right: 5px !important;
 }
 
-.clr-text-align-right {
+input.date-picker {
+  width: 128px;
+}
+
+/* テーブルヘッダー折り返し禁止 */
+th.nowrap {
+  white-space: nowrap;
+}
+
+/* テーブル内の小ボタンを中央表示する */
+td>button.btn-sm {
+  margin: 0;
+  vertical-align: middle;
+}
+
+/* 縦罫線ありテーブル */
+table.table.v-enable {
+  border-right: none;
+}
+/* オンマウス時の背景色変更 */
+table.table.v-enable tbody:hover td:not(.button-cell) {
+  background-color: #EDEDED;
+  /* color: #FFF; */
+}
+/* 縦罫線追加 */
+table.table.v-enable>thead>tr>th {
+  vertical-align: middle;
+  border-right: 1px solid #ccc;
+  background-color: #002538;
+  color: #FFF;
+}
+/* 線の引き方をデフォルトから変更 */
+table.table.v-enable>thead>tr:not(:first-child)>th {
+  border-top: 1px solid #ccc;
+}
+table.table.v-enable>thead>tr>th {
+  border-bottom: none;
+}
+.table.v-enable td {
+  border-top: 1px solid #ccc !important;
+  border-right: 1px solid #ccc;
+}
+/* ボタンのみ設定されているセル */
+.table.v-enable th.button-cell {
+  vertical-align: middle;
+  width: 50px;
+}
+.table.v-enable td.button-cell {
+  vertical-align: middle;
+}
+/* 数値項目右寄せ */
+.table.v-enable td.num {
   text-align: right;
 }
+/* 内部テーブルがあるセル */
+.table.v-enable td.inner-table {
+  margin: 0;
+  padding: 0;
+}
 
-.clr-text-align-left {
-  text-align: left;
+/* 内部テーブル */
+table.table.table-compact.inner-table {
+  margin: 0!important;
+  padding: 0!important;
+  border: none!important;
+  background-color: transparent;
+}
+table.table.table-compact.inner-table>tr>td.inner-table-top {
+  margin: 0!important;
+  padding: 6px 12px 6px !important;
+  border: none!important;
+  background-color: transparent;
+  white-space: nowrap;
+}
+/* 定期巡回３項目ぶち抜きのセルのレイアウトを維持するため高さ固定しておく */
+table.table.table-compact.inner-table>tr>td.inner-table-top.patrol-common {
+  height: 80px;
+}
+table.table.table-compact.inner-table>tr>td {
+  margin: 0!important;
+  padding: 6px 12px 6px !important;
+  border-bottom: none!important;
+  border-left: none!important;
+  border-right: none!important;
+  border-top: 1px solid #ccc;
+  background-color: transparent;
+  white-space: nowrap;
+}
+
+/* バッジ付きボタン */
+.button-cell {
+  position: relative;
+}
+.button-cell > .badge-pending {
+  position: absolute;
+  top: calc(50% - .3125rem);
+  right: .425rem;
 }

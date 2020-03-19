@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable, of} from "rxjs";
-import {environment} from "../../environments/environment";
+import {environment} from "../../../environments/environment";
 import {catchError, delay, tap} from "rxjs/operators";
-import {ManagerInfoModel} from "../model/manager-info.model";
+import {ManagerInfoModel} from "../../model/building/manager-info.model";
 
 @Injectable({
   providedIn: 'root'

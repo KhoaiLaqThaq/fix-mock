@@ -1,12 +1,12 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { animate, state, style, transition, trigger } from "@angular/animations";
-import { ContactModel } from "../../../model/contact.model";
+import { ContractModel } from "../../../model/building/contract.model";
 import { forkJoin, Subscription } from "rxjs";
-import { ContactService } from "../../../_services/contact.service";
-import { BuildingService } from "../../../_services/building.service";
-import { ManagerInfoService } from "../../../_services/manager-info.service";
-import { ApartmentService } from "../../../_services/apartment.service";
-import { CycleCheckingService } from "../../../_services/cycle-checking.service";
+import { ContractService } from "../../../_services/building/contract.service";
+import { BuildingService } from "../../../_services/building/building.service";
+import { ManagerInfoService } from "../../../_services/building/manager-info.service";
+import { ApartmentService } from "../../../_services/building/apartment.service";
+import { CycleCheckingService } from "../../../_services/building/cycle-checking.service";
 import { SwitchModel } from "../../../model/switch/switch.model";
 
 @Component({
@@ -25,7 +25,7 @@ import { SwitchModel } from "../../../model/switch/switch.model";
 })
 export class BuildingDataTableComponent implements OnInit, OnDestroy {
 
-  contracts: ContactModel[] = [];
+  contracts: ContractModel[] = [];
   switch = new SwitchModel();
   subscription: Subscription;
   switchForm: any;
@@ -33,7 +33,7 @@ export class BuildingDataTableComponent implements OnInit, OnDestroy {
 
 
   constructor(
-    private contactService: ContactService,
+    private contactService: ContractService,
     private buildingService: BuildingService,
     private managerInfoService: ManagerInfoService,
     private apartmentService: ApartmentService,
